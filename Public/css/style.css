@@ -1,38 +1,129 @@
-body {
-    position: fixed;
-    top: 0;
-    left: 0;
+* {
     margin: 0;
     padding: 0;
-    width: 100%;
+    box-sizing: border-box;
+}
+
+html {
     height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-image: linear-gradient(#0032BA, #00035A);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Montserrat', sans-serif;
+    color: #fff;
 }
 
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     height: inherit;
+}
+
+.col2 {
+    display: flex;
+    flex: 50%;
+    justify-content: center;
     align-items: center;
-    background: transparent linear-gradient(180deg, #0032BA 0%, #00035A 100%) 0% 0% no-repeat padding-box;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 30%;
 }
 
 .logo > img {
-    width: 12.5rem;
+    width: 15em;
 }
 
-form {
+.signup-container {
     display: flex;
     flex-direction: column;
-    height: 50%;
-    width: 30%;
-    justify-content: center;
+    height: 30%;
+    width: 50%;
+}
+
+.signup-container .tabgroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.signup-tab, .login-tab {
+    width: 50%;
+    height: 25%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 3em;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.signup-form, .login-form {
+    box-sizing: border-box;
+    padding: 5%;
+    clear: both;
+    width: 100%;
+}
+
+.signup-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-color: #0032ba;
+    border-radius: 4px;
+    background: #fff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+
+    font-size: 0.8em;
+    color: #0032ba;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; 
+}
+
+.signup-input:focus {
+    border: 2px solid #7fa1ff;
+}
+
+.signup-button {
+    width: 100%;
+    background-color: #0032ba;
+    text-align: center;
+    height: 3em;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    line-height: 3em;
+    font-size: 1em;
+    color: #e8eff7;
+    font-weight: 600;
+}
+
+.signup-bottom {
+    padding-top: 1.5em;
+    text-align: center;
+}
+
+span a {
+    text-decoration: none;
+    color: #1755ff;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .signup-container {
+        width: 90%;
+    }
 }
