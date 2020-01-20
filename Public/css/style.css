@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: row;
     height: inherit;
+    justify-content: center;
 }
 
 .col2 {
@@ -29,6 +30,7 @@ body {
     flex: 50%;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .logo {
@@ -112,6 +114,10 @@ body {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 span a {
     text-decoration: none;
     color: #1755ff;
@@ -126,4 +132,87 @@ span a {
     .signup-container {
         width: 90%;
     }
+}
+
+@media screen and (min-width: 600px) {
+    #bottomnav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .topnav-links {
+        display: none;
+    }
+}
+
+.filter-white {
+    filter: invert(96%) sepia(99%) saturate(2%) hue-rotate(218deg) brightness(112%) contrast(100%);
+}
+
+.notfound-header {
+    font-size: 5em;
+    font-weight: 500;
+    padding-bottom: 0.5em;
+}
+
+.notfound-text {
+    width: 60%;
+    font-size: 2.5em;
+    font-weight: 500;
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1em 1em 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.topnav a, .bottomnav a {
+    color: rgb(255, 255, 255, 0.5);
+    font-weight: 500;
+    font-size: 2em;
+    transition: all 0.3s ease-in-out;
+}
+
+.topnav a:hover, .bottomnav a:hover {
+    color: rgb(255, 255, 255, 0.8);
+}
+
+.topnav a.active, .bottomnav a.active {
+    color: rgb(255, 255, 255, 1.0);
+}
+
+.topnav-logo {
+    cursor: pointer;
+    height: 1.5em;
+    padding: 0px 10px 0px 0px;
+}
+
+.topnav-links {
+    list-style: none;
+}
+
+.topnav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.bottomnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottomnav a {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+    padding: 0.5em 1em;
 }
