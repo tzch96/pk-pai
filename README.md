@@ -1,4 +1,4 @@
-# pk-to
+# pk-pai
 
 Politechnika Krakowska / Cracow University of Technology  
 Wydział Informatyki i Telekomunikacji / Faculty of Computer Science and Telecommunications
