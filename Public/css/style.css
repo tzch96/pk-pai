@@ -306,7 +306,7 @@ h3 {
 
 @media only screen and (max-width: 600px) {
     .card {
-        grid-column-end: span 20;
+        grid-column-end: span 16;
     }
 
     .web-only {
@@ -323,6 +323,10 @@ h3 {
 
     .header-with-search button {
         width: 10%;
+    }
+
+    .content h1 {
+        font-size: 2em;
     }
 }
 
@@ -591,6 +595,10 @@ h2 {
 .box img {
     border-radius: 10px;
     width: 100%;
+}
+
+.box a {
+    color: #7fa1ff;
 }
 
 .slideshow-container {

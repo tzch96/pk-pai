@@ -1,6 +1,6 @@
 <?php
 
-class Controller {
+class AppController {
 
     function __construct() {
         $this->view = new View();

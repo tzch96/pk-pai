@@ -1,11 +1,11 @@
 <?php
 
-class Index extends AppController {
+class Learn extends AppController {
 
     function __construct() {
         parent::__construct();
 
-        $this->view->render('index/index');
+        $this->view->render('learn/index');
     }
 }
 

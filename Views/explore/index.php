@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'Views/header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-
-    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="../favicon-160x160.png" sizes="160x160" />
-    <link rel="icon" type="image/png" href="../favicon-196x196.png" sizes="196x196" />
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,500,600,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2fc3faf667.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" type="text/css" href="../Public/css/style.css" />
-
-    <title>sapiens</title>
-</head>
+<style>
+<?php include 'Public/css/style.css'; ?>
+</style>
 
 <body>
     <header class="topnav">
-        <a href="#"><img class="topnav-logo" src="../Public/img/logo.png"><img class="topnav-logo" src="../Public/img/logotext.png"></a>
+        <a href="#"><img class="topnav-logo" src="Public/img/logo.png"><img class="topnav-logo" src="Public/img/logotext.png"></a>
         <nav>
             <ul class="topnav-links">
-                <li><a href="#">learn</a></li>
+                <li><a href="learn">learn</a></li>
                 <li><a class="active" href="#">explore</a></li>
-                <li><a href="#">profile</a></li>
-                <li><a href="#">settings</a></li>
+                <li><a href="profile">profile</a></li>
+                <li><a href="settings">settings</a></li>
             </ul>
         </nav>
         <a class="topnav-logout" href="#"><i class="fas fa-sign-out-alt"></i></a>
@@ -49,7 +34,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="../Public/img/lesson-placeholder.jpg">
+                            <img src="Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Course 1</h3>
@@ -61,7 +46,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="../Public/img/lesson-placeholder.jpg">
+                            <img src="Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Course 2</h3>
@@ -76,10 +61,9 @@
     </div>
     
     <div id="bottomnav" class="bottomnav">
-        <a href="#"><i class="fas fa-book"></i></a>
-        <a class="active" href="#"><i class="fas fa-search"></i></a>
-        <a href="#"><i class="fas fa-user"></i></a>
-        <a href="#"><i class="fas fa-cog"></i></a>
+        <a href="learn"><i class="fas fa-book"></i></a>
+        <a class="active" href="explore"><i class="fas fa-search"></i></a>
+        <a href="profile"><i class="fas fa-user"></i></a>
+        <a href="settings"><i class="fas fa-cog"></i></a>
     </div>
 </body>
-</html>
