@@ -134,7 +134,7 @@ span a {
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
     #bottomnav {
         display: none;
     }
@@ -161,6 +161,10 @@ span a {
     font-size: 2.5em;
     font-weight: 500;
     font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+}
+
+.notfound-text a {
+    color: #1755ff
 }
 
 header {
@@ -206,13 +210,447 @@ header {
     justify-content: center;
     align-items: center;
 
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: #00035A
 }
 
 .bottomnav a {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
     display: block;
     padding: 0.5em 1em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;    
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1%;
+}
+
+.content h1 {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 3em;
+}
+
+.dropdown-button {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 25%;
+    max-width: 50%;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #00035A;
+    padding: 1em 1em;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e8eff7;
+}
+
+.dropdown-menu:hover .dropdown-content, .dropdown-menu:active .dropdown-content {
+    display: block;
+}
+
+h3 {
+    font-size: 2em;
+    color: #0032BA;
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5em;
+    padding: 1em 0;
+}
+
+.card-title {
+    line-height: 2em;
+}
+
+.cards {
+    grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr 1fr);
+    grid-gap: 1.5em;
+}
+
+.card {
+    grid-column-end: span 6;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        grid-column-end: span 20;
+    }
+
+    .web-only {
+        display: none;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .header-with-search input[type=text] {
+        width: 90%;
+    }
+
+    .header-with-search button {
+        width: 10%;
+    }
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card-image {
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-content {
+    padding: 1em;
+}
+
+.card-description {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: #00035A;
+}
+
+.card-category {
+    padding-top: 1em;
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: #00035A;
+}
+
+.header-with-search div {
+    overflow: hidden;
+}
+
+.header-with-search h1 {
+    float: left;
+}
+
+.header-with-search .search-box {
+    margin-top: 0.7em;
+    float: right;
+}
+
+.header-with-search input[type=text] {
+    border: none;
+    padding: 0.5em;
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    color: #00035A;
+    line-height: 1.5em;
+    font-size: 1em;
+}
+
+.header-with-search .search-box button {
+    float: right;
+    border: none;
+    padding: 0.5em;
+    background: #fff;
+    line-height: 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+}
+
+.box {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    grid-column-end: span 1;
+    padding-bottom: 1em;
+}
+
+.profile-description {
+    padding-top: 1em;
+    font-size: 0.7em;
+}
+
+@media only screen and (max-width: 600px) {
+    .box {
+        grid-column-end: span 2;
+    }
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-info img {
+    height: 2.5em;
+    padding-right: 0.5em;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box h4 {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.box h5 {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.75em;
+}
+
+.box ul {
+    list-style-type: none;
+    padding-top: 0.5em;
+    font-size: 0.75em;
+}
+
+.box li {
+    padding-bottom: 0.25em;
+}
+
+h2 {
+    font-size: 2em;
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.header-with-button h1 {
+    float: left;
+}
+
+.save-button {
+    display: block;
+    margin-top: 0.7em;
+    cursor: pointer;
+}
+
+.save-button button {
+    border: none;
+    padding: 0.5em;
+    background: transparent;
+    color: #fff;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+.item {
+    float: right;
+}
+
+.settings-container input[type=text], input[type=password], textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #fff;
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    color: #00035A;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 1.2em;
+}
+
+.settings-container textarea {
+    height: 5em;
+    margin-bottom: 0.5em;
+}
+
+.settings-container label {
+    padding: 0.5em 0.5em 0.5em 0;
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 0.5em;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 0.5em;
+}
+
+.settings-row:after, .settings-row:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .settings-container textarea {
+        margin-bottom: 0;
+    }
+
+    .settings-container label {
+        display: none;
+    }
+
+    .col-25, .col-75 {
+        width: 100%;
+    }
+}
+
+.lesson-contents {
+    grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr 1fr);
+    grid-gap: 1.5em;
+}
+
+.lesson-content {
+    grid-column-end: span 6;
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-content-title {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.lesson-content a {
+    color: #fff;
+}
+
+.lesson-content-item {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+.lesson-content-desc {
+    font-family: 'Montserrat Alternates', 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 600px) {
+    .lesson-content {
+        grid-column-end: span 20;
+    }
+}
+
+.box img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.slides {
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    color: #fff;
+    padding: 0.5em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.topic-paragraph {
+    float: left;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.topic-image {
+    float: right;
+    border-radius: 10px;
+    display: inline-block;
 }
