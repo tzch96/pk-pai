@@ -6,13 +6,13 @@
 
 <body>
     <header class="topnav">
-        <a href="index"><img class="topnav-logo" src="Public/img/logo.png"><img class="topnav-logo" src="Public/img/logotext.png"></a>
+        <a href="<?php echo URL; ?>index"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logo.png"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logotext.png"></a>
         <nav>
             <ul class="topnav-links">
                 <li><a class="active" href="#">learn</a></li>
-                <li><a href="explore">explore</a></li>
-                <li><a href="profile">profile</a></li>
-                <li><a href="settings">settings</a></li>
+                <li><a href="<?php echo URL; ?>explore">explore</a></li>
+                <li><a href="<?php echo URL; ?>profile">profile</a></li>
+                <li><a href="<?php echo URL; ?>settings">settings</a></li>
             </ul>
         </nav>
         <a class="topnav-logout" href="#"><i class="fas fa-sign-out-alt"></i></a>
@@ -36,7 +36,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="Public/img/lesson-placeholder.jpg">
+                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Lesson 1</h3>
@@ -46,7 +46,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="Public/img/lesson-placeholder.jpg">
+                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Lesson 2</h3>
@@ -56,7 +56,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="Public/img/lesson-placeholder.jpg">
+                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Lesson 3</h3>
@@ -66,7 +66,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="Public/img/lesson-placeholder.jpg">
+                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Lesson 4</h3>
@@ -76,7 +76,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="Public/img/lesson-placeholder.jpg">
+                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Lesson 5</h3>
@@ -86,7 +86,7 @@
                 <div class="card">
                     <a href="#">
                         <div class="card-image">
-                            <img src="Public/img/lesson-placeholder.jpg">
+                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">Lesson 6</h3>
@@ -99,9 +99,9 @@
     </div>
     
     <div id="bottomnav" class="bottomnav">
-        <a class="active" href="learn"><i class="fas fa-book"></i></a>
-        <a href="explore"><i class="fas fa-search"></i></a>
-        <a href="profile"><i class="fas fa-user"></i></a>
-        <a href="settings"><i class="fas fa-cog"></i></a>
+        <a class="active" href="#"><i class="fas fa-book"></i></a>
+        <a href="<?php echo URL; ?>explore"><i class="fas fa-search"></i></a>
+        <a href="<?php echo URL; ?>profile"><i class="fas fa-user"></i></a>
+        <a href="<?php echo URL; ?>settings"><i class="fas fa-cog"></i></a>
     </div>
 </body>

@@ -7,8 +7,8 @@
 <body>
     <div class="container">
         <div class="col2 logo">
-            <img src="Public/img/logo.png">
-            <img style="padding-top: 2em;" src="Public/img/logotext.png">
+            <img src="<?php echo URL; ?>Public/img/logo.png">
+            <img style="padding-top: 2em;" src="<?php echo URL; ?>Public/img/logotext.png">
         </div>
         <div class="col2">
             <div class="signup-container">
@@ -18,19 +18,23 @@
                 </div>
 
                 <div class="login-form">
-                    <input type="email" class="signup-input" placeholder="Email"><br>
-                    <input type="password" class="signup-input" placeholder="Password"><br>
-                    <div class="signup-button">LOGIN</div>
+                    <form action="index/login" method="post">
+                        <input type="text" name="login" class="signup-input" placeholder="Username"><br>
+                        <input type="password" name="password" class="signup-input" placeholder="Password"><br>
+                        <button type="submit" class="signup-button">LOGIN</button>
+                    </form>
                     <div class="signup-bottom">
                         <span><a href="#">Forgot Password?</a></span>
                     </div>
                 </div>
 
                 <div class="signup-form">
-                    <input type="email" class="signup-input" placeholder="Email"><br>
-                    <input type="password" class="signup-input" placeholder="Password"><br>
-                    <input type="password" class="signup-input" placeholder="Repeat Password"><br>
-                    <div class="signup-button">SIGN UP</div>
+                    <form action="index/signup" method="post">
+                        <input type="text" class="signup-input" placeholder="Username"><br>
+                        <input type="password" class="signup-input" placeholder="Password"><br>
+                        <input type="password" class="signup-input" placeholder="Repeat Password"><br>
+                        <button type="submit" class="signup-button">SIGN UP</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -55,9 +59,9 @@
                 $(".signup-tab").css("color", "rgba(255, 255, 255, 1)");
             });
 
-            $(".signup-button").click(function() {
-                $(".signup-input").val("");
-            })
+            // $(".signup-button").click(function() {
+            //     $(".signup-input").val("");
+            // })
         });
     </script>
 </body>

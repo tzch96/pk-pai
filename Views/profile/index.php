@@ -6,13 +6,13 @@
 
 <body>
     <header class="topnav">
-        <a href="index"><img class="topnav-logo" src="Public/img/logo.png"><img class="topnav-logo" src="Public/img/logotext.png"></a>
+        <a href="<?php echo URL; ?>index"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logo.png"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logotext.png"></a>
         <nav>
             <ul class="topnav-links">
-                <li><a href="learn">learn</a></li>
-                <li><a href="explore">explore</a></li>
+                <li><a href="<?php echo URL; ?>learn">learn</a></li>
+                <li><a href="<?php echo URL; ?>explore">explore</a></li>
                 <li><a class="active" href="#">profile</a></li>
-                <li><a href="settings">settings</a></li>
+                <li><a href="<?php echo URL; ?>settings">settings</a></li>
             </ul>
         </nav>
         <a class="topnav-logout" href="#"><i class="fas fa-sign-out-alt"></i></a>
@@ -24,7 +24,7 @@
         <div class="profile-grid">
             <div class="box">
                 <div class="profile-info">
-                    <img style="width: 3em;" src="Public/img/user-icon.png">
+                    <img style="width: 3em;" src="<?php echo URL; ?>Public/img/user-icon.png">
                     <div class="user-info">
                         <h4>Name Surname</h4>
                         <h5>Location</h5>
@@ -34,7 +34,7 @@
             </div>
             <div class="box">
                 <h4>Completed courses</h4>
-                <p class="profile-description">Nothing to show here. Go to the <a href="explore">Explore</a> page to find interesting courses!</p>
+                <p class="profile-description">Nothing to show here. Go to the <a href="<?php echo URL; ?>explore">Explore</a> page to find interesting courses!</p>
             </div>
             <div class="box"><p class="profile-description">Member since: 1970-01-01</p></div>
             <div class="box">
@@ -48,9 +48,9 @@
     </div>
     
     <div id="bottomnav" class="bottomnav">
-        <a href="learn"><i class="fas fa-book"></i></a>
-        <a href="explore"><i class="fas fa-search"></i></a>
+        <a href="<?php echo URL; ?>learn"><i class="fas fa-book"></i></a>
+        <a href="<?php echo URL; ?>explore"><i class="fas fa-search"></i></a>
         <a class="active" href="#"><i class="fas fa-user"></i></a>
-        <a href="settings"><i class="fas fa-cog"></i></a>
+        <a href="<?php echo URL; ?>settings"><i class="fas fa-cog"></i></a>
     </div>
 </body>
