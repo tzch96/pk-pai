@@ -34,10 +34,10 @@
     </header>
 
     <div class="content">
-        <h1 style="padding-bottom: 0.5em;">User management</h1>
+        <h1 style="padding-bottom: 0.5em;">Course management</h1>
 
         <?php
-            $sql = "SELECT * FROM users";
+            $sql = "SELECT courses.id_course, categories.category_name, courses.course_name, courses.description FROM courses INNER JOIN categories ON categories.id_category=courses.id_category";
             $result = $conn->query($sql);
         ?>
 
@@ -45,9 +45,9 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Username</th>
-                    <th>E-mail</th>
-                    <th>Role</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Description</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -56,11 +56,11 @@
                     while ($rows = mysqli_fetch_assoc($result))
                     {?>
                         <tr>
-                            <td><?php echo $rows['id_user']?></td>
-                            <td><?php echo $rows['username']?></td>
-                            <td><?php echo $rows['email']?></td>
-                            <td><?php echo $rows['role']?></td>
-                            <td><a href="<?php echo URL; ?>admin/deleteUser/<?php echo $rows['id_user'];?>"><i class="fas fa-user-times"></i></td>
+                            <td><?php echo $rows['id_course']?></td>
+                            <td><?php echo $rows['category_name']?></td>
+                            <td><?php echo $rows['course_name']?></td>
+                            <td><?php echo $rows['description']?></td>
+                            <td><a href="<?php echo URL; ?>admin/deleteCourse/<?php echo $rows['id_course'];?>"><i class="fas fa-trash"></i></td>
                         </tr>
                     <?php
                 }?>

@@ -14,6 +14,10 @@ class Admin extends AppController {
         $this->view->render('admin/manage-users');
     }
 
+    public function courses() {
+        $this->view->render('admin/manage-courses');
+    }
+
     public function deleteUser($id) {
         // TODO make connection load from dbh.inc
         $conn = mysqli_connect("127.0.0.1", "admin", "admin", "sapiens");
@@ -22,7 +26,7 @@ class Admin extends AppController {
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "DELETE FROM users WHERE idUsers=$id";
+        $sql = "DELETE FROM users WHERE id_user=$id";
 
         if (mysqli_query($conn, $sql)) {
             $this->view->msg = "Deleted user with ID " . $id;
