@@ -9,14 +9,6 @@ class Index extends AppController {
     function index() {
         $this->view->render('index/index');
     }
-
-    function login() {
-        $this->model->login();
-    }
-
-    function signup() {
-        $this->model->signup();
-    }
 }
 
 ?>

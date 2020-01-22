@@ -183,11 +183,23 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-.topnav a:hover, .bottomnav a:hover {
+.topnav-logout {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255, 0.5);
+    padding: 0.5em 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.topnav a:hover, .topnav-logout:hover, .bottomnav a:hover {
     color: rgb(255, 255, 255, 0.8);
 }
 
-.topnav a.active, .bottomnav a.active {
+.topnav a.active, .topnav-logout:active, .bottomnav a.active {
     color: rgb(255, 255, 255, 1.0);
 }
 

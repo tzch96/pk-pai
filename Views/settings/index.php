@@ -5,6 +5,18 @@
 </style>
 
 <body>
+
+    <?php
+        if (!isset($_SESSION['userId'])) {
+            echo '<script type="text/javascript">',
+            'window.location.replace("index");',
+            '</script>';
+            exit();
+        } else {
+
+        }
+    ?>
+    
     <header class="topnav">
         <a href="<?php echo URL; ?>index"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logo.png"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logotext.png"></a>
         <nav>
@@ -15,7 +27,9 @@
                 <li><a class="active" href="#">settings</a></li>
             </ul>
         </nav>
-        <a class="topnav-logout" href="#"><i class="fas fa-sign-out-alt"></i></a>
+        <form action="<?php echo URL; ?>Includes/logout.inc.php" method="post">
+            <button type="submit" class="topnav-logout" name="logout-submit"><i class="fas fa-sign-out-alt"></i></button>
+        </form>
     </header>
 
     <div class="content">

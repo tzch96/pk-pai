@@ -30,7 +30,9 @@
                 <li><a href="#">settings</a></li>
             </ul>
         </nav>
-        <a class="topnav-logout" href="#"><i class="fas fa-sign-out-alt"></i></a>
+        <form action="<?php echo URL; ?>Includes/logout.inc.php" method="post">
+            <button type="submit" class="topnav-logout" name="logout-submit"><i class="fas fa-sign-out-alt"></i></button>
+        </form>
     </header>
 
     <div class="content">
