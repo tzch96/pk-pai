@@ -30,9 +30,15 @@ if (isset($_POST['login-submit'])) {
                     session_start();
                     $_SESSION['userId'] = $row['idUsers'];
                     $_SESSION['userUsername'] = $row['usernameUsers'];
+                    $_SESSION['userRole'] = $row['roleUsers'];
 
-                    header("Location: ../dashboard");
-                    exit();
+                    if ($_SESSION['userRole'] == "admin") {
+                        header("Location: ../admin");
+                        exit();
+                    } else {
+                        header("Location: ../dashboard");
+                        exit();
+                    }
                 } else {
                     header("Location: ../index.php?error=wrongpassword");
                     exit();
