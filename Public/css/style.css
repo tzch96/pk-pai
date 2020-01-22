@@ -675,3 +675,30 @@ h2 {
     border-radius: 10px;
     display: inline-block;
 }
+
+table, th, td {
+    text-align: left;
+}
+
+table {
+    border: 0px;
+    padding-top: 0.5em;
+}
+
+th, td {
+    padding: 0.2em;
+    border-bottom: 1px solid #e8eff7;
+}
+
+th {
+    background-color: #e8eff7;
+    color: #00035A;
+}
+
+td {
+    color: #0032ba;
+}
+
+label, .dataTables_info, .paginate_button {
+    color: #fff !important;
+}

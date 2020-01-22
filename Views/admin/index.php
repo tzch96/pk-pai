@@ -1,3 +1,5 @@
+<?php include_once 'Includes/dbh.inc.php' ?>
+
 <?php include 'Views/header.php'; ?>
 
 <style>
@@ -21,7 +23,8 @@
         <a href="<?php echo URL; ?>index"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logo.png"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logotext.png"></a>
         <nav>
             <ul class="topnav-links">
-                <li><a href="<?php echo URL; ?>admin">admin panel</a></li>
+                <li><a href="<?php echo URL; ?>admin">home</a></li>
+                <li><a href="<?php echo URL; ?>admin/users">users</a></li>
             </ul>
         </nav>
         <form action="<?php echo URL; ?>Includes/logout.inc.php" method="post">
@@ -31,10 +34,11 @@
 
     <div class="content">
         <h1 style="padding-bottom: 0.5em;">Welcome!</h1>
-        <h1>You are logged in to the admin dashboard.</h1>
+        <h1>You are logged in as the administrator.</h1>
     </div>
     
     <div id="bottomnav" class="bottomnav">
-        <a href="<?php echo URL; ?>admin"><i class="fas fa-user"></i></a>
+        <a href="<?php echo URL; ?>admin"><i class="fas fa-home"></i></a>
+        <a href="<?php echo URL; ?>admin/users"><i class="fas fa-user"></i></a>
     </div>
 </body>

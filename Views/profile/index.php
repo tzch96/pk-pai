@@ -40,7 +40,7 @@
                 <div class="profile-info">
                     <img style="width: 3em;" src="<?php echo URL; ?>Public/img/user-icon.png">
                     <div class="user-info">
-                        <h4>Name Surname</h4>
+                        <h4>Username</h4>
                         <h5>Location</h5>
                     </div>
                 </div>
