@@ -34,6 +34,8 @@
     </header>
 
     <div class="content">
+        <h2 style="padding-bottom: 0.5em;"><?php echo $this->msg; ?></h3>
+
         <?php
             $sql = "SELECT courses.id_course, categories.category_name, courses.course_name, courses.description FROM courses INNER JOIN categories ON categories.id_category=courses.id_category";
             $result = $conn->query($sql);
@@ -55,7 +57,7 @@
                     while ($rows = mysqli_fetch_assoc($result))
                     {?>
                         <div class="card">
-                            <a href="explore/course/<?php echo $rows['id_course']; ?>">
+                            <a href="<?php echo URL; ?>explore/course/<?php echo $rows['id_course']; ?>">
                                 <div class="card-image">
                                     <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                                 </div>

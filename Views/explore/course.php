@@ -45,8 +45,7 @@
             <div class="save-button">
                 <form action="/">
                     <div class="item">
-                        <!-- TODO make a proper start course function -->
-                        <h2><a style="color: #fff;" href="start">Start</a></h2>
+                        <h2><a style="color: #fff;" href="<?php echo URL; ?>explore/startCourse/<?php echo $rows ['id_course']; ?>">Start</a></h2>
                     </div>
                     <div class="item">
                         <button type="submit"><i class="fas fa-play"></i></button>

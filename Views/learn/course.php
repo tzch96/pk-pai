@@ -23,7 +23,7 @@
         <a href="<?php echo URL; ?>index"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logo.png"><img class="topnav-logo" src="<?php echo URL; ?>Public/img/logotext.png"></a>
         <nav>
             <ul class="topnav-links">
-                <li><a class="active" href="#">learn</a></li>
+                <li><a class="active" href="<?php echo URL; ?>learn">learn</a></li>
                 <li><a href="<?php echo URL; ?>explore">explore</a></li>
                 <li><a href="<?php echo URL; ?>profile">profile</a></li>
                 <li><a href="<?php echo URL; ?>settings">settings</a></li>
@@ -51,16 +51,55 @@
             <?php
                 while ($rows = mysqli_fetch_assoc($result))
                 {?>
-                    <a href="learn/course/<?php echo $rows['id_course']; ?>"><?php echo $rows['course_name']; ?></a>
+                    <a href="<?php echo URL; ?>learn/course/<?php echo $rows['id_course']; ?>"><?php echo $rows['course_name']; ?></a>
                 <?php
                 }?>
             </div>
         </div>
 
+        <?php
+            $idCourse = explode('/', $_GET["url"])[2];
+            $sql = "SELECT courses.course_name FROM courses WHERE courses.id_course=$idCourse";
+            $result = $conn->query($sql);
+            $courseName = mysqli_fetch_assoc($result)['course_name'];
+        ?>
+        <!-- TODO: add completion percentage here (to span element)  -->
+        <h1 style="padding-top: 1em;">Current course: <?php echo $courseName; ?><span style="float: right;"></span></h1>
+
+        <?php
+            $sql = "SELECT lessons.lesson_name FROM lessons
+                        LEFT JOIN courses ON courses.id_course=lessons.id_course
+                        WHERE lessons.id_course=$idCourse";
+
+            $result = $conn->query($sql);
+        ?>
+
+        <h1 style="padding-top: 1em; padding-bottom: 0.5em;">Lessons</h1>
+
+        <div class="grid">
+            <section class="cards">
+                <?php
+                while ($rows = mysqli_fetch_assoc($result))
+                {?>
+                    <div class="card">
+                        <a href="#">
+                            <div class="card-image">
+                                <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title"><?php echo $rows['lesson_name']; ?></h3>
+                            </div>
+                        </a>
+                    </div>
+                <?php
+                }?>
+            </section>
+        </div>
+
     </div>
     
     <div id="bottomnav" class="bottomnav">
-        <a class="active" href="#"><i class="fas fa-book"></i></a>
+        <a class="active" href="<?php echo URL; ?>learn"><i class="fas fa-book"></i></a>
         <a href="<?php echo URL; ?>explore"><i class="fas fa-search"></i></a>
         <a href="<?php echo URL; ?>profile"><i class="fas fa-user"></i></a>
         <a href="<?php echo URL; ?>settings"><i class="fas fa-cog"></i></a>
