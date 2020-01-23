@@ -90,10 +90,6 @@
                 $(".login-tab").css("color", "rgba(255, 255, 255, 0.5)");
                 $(".signup-tab").css("color", "rgba(255, 255, 255, 1)");
             });
-
-            // $(".signup-button").click(function() {
-            //     $(".signup-input").val("");
-            // })
         });
     </script>
 </body>
