@@ -11,9 +11,15 @@ class Learn extends AppController {
     }
 
     public function course($arg) {
-        $idCourse = explode('/', $_GET["url"])[2];
-        $this->view->idCourse = $idCourse;
         $this->view->render('learn/course');
+    }
+
+    public function lesson($arg) {
+        $this->view->render('learn/lesson');
+    }
+
+    public function theory($arg) {
+        $this->view->render('learn/theory');
     }
 }
 

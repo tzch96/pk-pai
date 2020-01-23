@@ -59,6 +59,7 @@
 
         <?php
             $idCourse = explode('/', $_GET["url"])[2];
+            $_SESSION['currentCourseId'] = $idCourse;
             $sql = "SELECT courses.course_name FROM courses WHERE courses.id_course=$idCourse";
             $result = $conn->query($sql);
             $courseName = mysqli_fetch_assoc($result)['course_name'];
@@ -67,7 +68,7 @@
         <h1 style="padding-top: 1em;">Current course: <?php echo $courseName; ?><span style="float: right;"></span></h1>
 
         <?php
-            $sql = "SELECT lessons.lesson_name FROM lessons
+            $sql = "SELECT lessons.lesson_name, lessons.id_lesson FROM lessons
                         LEFT JOIN courses ON courses.id_course=lessons.id_course
                         WHERE lessons.id_course=$idCourse";
 
@@ -82,7 +83,7 @@
                 while ($rows = mysqli_fetch_assoc($result))
                 {?>
                     <div class="card">
-                        <a href="#">
+                        <a href="<?php echo URL; ?>learn/lesson/<?php echo $rows['id_lesson']; ?>">
                             <div class="card-image">
                                 <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
                             </div>
