@@ -21,6 +21,14 @@ class Learn extends AppController {
     public function theory($arg) {
         $this->view->render('learn/theory');
     }
+
+    public function tasks($arg) {
+        $this->view->render('learn/tasks');
+    }
+
+    public function test($arg) {
+        $this->view->render('learn/test');
+    }
 }
 
 ?>

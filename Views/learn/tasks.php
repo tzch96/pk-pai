@@ -37,7 +37,7 @@
             <?php
                 while ($rows = mysqli_fetch_assoc($result))
                 {?>
-                    <a href="<?php echo URL; ?>learn/lesson/<?php echo $rows['id_lesson']; ?>"><?php echo $rows['lesson_name']; ?></a>
+                    <a href="<?php echo URL; ?>learn/tasks/<?php echo $rows['id_lesson']; ?>"><?php echo $rows['lesson_name']; ?></a>
                 <?php
                 }?>
             </div>
@@ -52,27 +52,19 @@
         <!-- TODO: add completion percentage here (to span element) -->
         <h1 style="padding-top: 1em;">Current lesson: <?php echo $lessonName; ?><span style="float: right;"></span></h1>
 
+        <?php
+            $sql = "SELECT tasks.id_task, tasks.question, tasks.answer FROM tasks WHERE tasks.id_lesson=$idLesson";
+            $result = $conn->query($sql);
 
-        <div class="grid">
-            <section class="lesson-contents">
-                <div class="lesson-content">
-                    <h4 class="lesson-content-title">Theory</h4>
-                    <a href="<?php echo URL; ?>learn/theory/<?php echo $idLesson; ?>" class="lesson-content-item"><?php echo $lessonName; ?> - Theory</a>
-                    <p class="lesson-content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="lesson-content">
-                    <h4 class="lesson-content-title">Flashcards</h4>
-                </div>
-                <div class="lesson-content">
-                    <h4 class="lesson-content-title">Tasks</h4>
-                    <a href="<?php echo URL; ?>learn/tasks/<?php echo $idLesson; ?>" class="lesson-content-item"><?php echo $lessonName; ?> - Tasks</a>
-                </div>
-                <div class="lesson-content">
-                    <h4 class="lesson-content-title">Tests</h4>
-                    <a href="<?php echo URL; ?>learn/test/<?php echo $idLesson; ?>" class="lesson-content-item"><?php echo $lessonName; ?> - Test</a>
-                </div>
-            </section>
-        </div>
+            while ($rows = mysqli_fetch_assoc($result))
+            {?>
+                <h2 style="padding-top: 0.5em; padding-bottom: 0.5em;"><?php echo $rows['question']; ?></h2>
+                <form>
+                    <!-- TODO make this use something else than HTML5 input pattern so that the answer can actually be sent, e.g. using AJAX -->
+                    <input class="signup-input" type="text" id="answer" pattern="<?php echo $rows['answer']; ?>" placeholder="Write your answer here" required></input>
+                </form>
+            <?php
+            }?>
     </div>
     
     <div id="bottomnav" class="bottomnav">
@@ -81,5 +73,12 @@
         <a href="<?php echo URL; ?>profile"><i class="fas fa-user"></i></a>
         <a href="<?php echo URL; ?>settings"><i class="fas fa-cog"></i></a>
     </div>
+
+    <script>
+        var input = document.getElementById('answer');
+        input.oninvalid = function(event) {
+            event.target.setCustomValidity('Wrong answer!');
+        }
+    </script>
 </body>
 </html>
