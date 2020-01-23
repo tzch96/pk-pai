@@ -28,15 +28,24 @@ class Explore extends AppController {
         $idUser = $_SESSION['userId'];
         $idCourse = explode('/', $_GET["url"])[2];
 
-        $sql = "INSERT INTO users_courses (id_user, id_course) VALUES ($idUser, $idCourse)";
+        mysqli_autocommit($conn, false);
 
-        if (mysqli_query($conn, $sql)) {
-            $this->view->msg = "You have started a new course. You can now go to the learn page or browse through other courses.";
+        $sql = "INSERT INTO users_courses (id_user, id_course) VALUES ($idUser, $idCourse)";
+        mysqli_query($conn, $sql);
+
+        if (!mysqli_commit($conn)) {
+            $this->view->msg = "Error starting course: " . mysqli_error($conn);
+            $this->view->render('explore/index');
+            exit();
         } else {
-            $this->view->msg = "Error $arg starting course: " . mysqli_error($conn);
+            $this->view->msg = "You have started a new course. You can now go to the learn page or browse through other courses.";
+            $this->view->render('explore/index');
+            exit();
         }
 
-        $this->view->render('explore/index');
+        mysqli_rollback($conn);
+
+        mysqli_close($conn);
     }
 }
 
