@@ -1,3 +1,5 @@
+<?php include 'Includes/dbh.inc.php' ?>
+
 <?php include 'Views/header.php'; ?>
 
 <style>
@@ -32,6 +34,11 @@
     </header>
 
     <div class="content">
+        <?php
+            $sql = "SELECT courses.id_course, categories.category_name, courses.course_name, courses.description FROM courses INNER JOIN categories ON categories.id_category=courses.id_category";
+            $result = $conn->query($sql);
+        ?>
+
         <div class="header-with-search">
             <h1 class="web-only" style="padding-bottom: 0.5em;">Available courses</h1>
             <div class="search-box">
@@ -44,30 +51,23 @@
 
         <div class="grid">
             <section class="cards">
-                <div class="card">
-                    <a href="#">
-                        <div class="card-image">
-                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
+                <?php
+                    while ($rows = mysqli_fetch_assoc($result))
+                    {?>
+                        <div class="card">
+                            <a href="explore/course/<?php echo $rows['id_course']; ?>">
+                                <div class="card-image">
+                                    <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
+                                </div>
+                            <div class="card-content">
+                                <h3 class="card-title"><?php echo $rows['course_name']; ?></h3>
+                                <p class="card-description"><?php echo $rows['description']; ?></p>
+                                <p class="card-category">Category: <?php echo $rows['category_name']; ?></p>
+                            </div>
+                            </a>
                         </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Course 1</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                            <p class="card-category">Category: X</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#">
-                        <div class="card-image">
-                            <img src="<?php echo URL; ?>Public/img/lesson-placeholder.jpg">
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Course 2</h3>
-                            <p class="card-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                            <p class="card-category">Category: X</p>
-                        </div>
-                    </a>
-                </div>
+                    <?php
+                    }?>
             </section>
         </div>
 

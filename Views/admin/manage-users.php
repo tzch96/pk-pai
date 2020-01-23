@@ -24,7 +24,7 @@
         <nav>
             <ul class="topnav-links">
                 <li><a href="<?php echo URL; ?>admin">home</a></li>
-                <li><a href="<?php echo URL; ?>admin/users">users</a></li>
+                <li><a class="active" href="<?php echo URL; ?>admin/users">users</a></li>
                 <li><a href="<?php echo URL; ?>admin/courses">courses</a></li>
             </ul>
         </nav>
@@ -72,7 +72,7 @@
     
     <div id="bottomnav" class="bottomnav">
         <a href="<?php echo URL; ?>admin"><i class="fas fa-home"></i></a>
-        <a href="<?php echo URL; ?>admin/users"><i class="fas fa-user"></i></a>
+        <a class="active" href="<?php echo URL; ?>admin/users"><i class="fas fa-user"></i></a>
         <a href="<?php echo URL; ?>admin/courses"><i class="fas fa-book"></i></a>
     </div>
 
