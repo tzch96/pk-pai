@@ -57,11 +57,14 @@
             $result = $conn->query($sql);
 
             while ($rows = mysqli_fetch_assoc($result))
-            {?>
+            {
+                $task = $rows['id_task'];
+                ?>
                 <h2 style="padding-top: 0.5em; padding-bottom: 0.5em;"><?php echo $rows['question']; ?></h2>
                 <form>
-                    <!-- TODO make this use something else than HTML5 input pattern so that the answer can actually be sent, e.g. using AJAX -->
-                    <input class="signup-input" type="text" id="answer" pattern="<?php echo $rows['answer']; ?>" placeholder="Write your answer here" required></input>
+                    <input id="answer<?php echo "$task"; ?>" class="signup-input" type="text" placeholder="Write your answer here"></input>
+                    <div id="grade<?php echo $task; ?>"></div>
+                    <button type="button" class="signup-button" onclick='checkAnswer(<?php echo $task; ?>, "<?php echo $rows["answer"]; ?>")'>Check answer</button>
                 </form>
             <?php
             }?>
@@ -74,11 +77,6 @@
         <a href="<?php echo URL; ?>settings"><i class="fas fa-cog"></i></a>
     </div>
 
-    <script>
-        var input = document.getElementById('answer');
-        input.oninvalid = function(event) {
-            event.target.setCustomValidity('Wrong answer!');
-        }
-    </script>
+    <script src="<?php echo URL;?>Public/js/checkAnswer.js"></script>
 </body>
 </html>
