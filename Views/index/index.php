@@ -36,6 +36,8 @@
                             echo '<p>Your passwords do not match.</p>';
                         } else if ($_GET['error'] == "usernametaken") {
                             echo '<p>This username is already taken.</p>';
+                        } else if ($_GET['error'] == "nouser") {
+                            echo '<p>This user does not exist.</p>';
                         }
                     } else if ($_GET['signup'] == "success") {
                         echo '<p>Registration successful - you can now log in.</p>';
@@ -44,14 +46,15 @@
 
                 <div class="signup-container">
                     <div class="tabgroup">
-                        <div class="login-tab">login</div>
-                        <div class="signup-tab">sign up</div>
+                        <div onclick="hideError()" class="login-tab">login</div>
+                        <div onclick="hideError()" class="signup-tab">sign up</div>
                     </div>
+                    <div class="error-message" id="error-message"></div>
     
                     <div class="login-form">
-                        <form action="<?php echo URL; ?>Includes/login.inc.php" method="post">
-                            <input type="text" name="login-username" class="signup-input" placeholder="Username or E-mail"><br>
-                            <input type="password" name="login-password" class="signup-input" placeholder="Password"><br>
+                        <form id="login-form" action="<?php echo URL; ?>Includes/login.inc.php" method="post">
+                            <input type="text" id="login-username" name="login-username" class="signup-input" placeholder="Username or E-mail"><br>
+                            <input type="password" id="login-password" name="login-password" class="signup-input" placeholder="Password"><br>
                             <button type="submit" name="login-submit" class="signup-button">LOGIN</button>
                         </form>
                         <div class="signup-bottom">
@@ -60,11 +63,11 @@
                     </div>
     
                     <div class="signup-form">
-                        <form action="<?php echo URL; ?>Includes/signup.inc.php" method="post">
-                            <input type="text" name="signup-username" class="signup-input" value="<?php if (isset($_GET['signup-username'])){echo($_GET['signup-username']);}?>" placeholder="Username"><br>
-                            <input type="text" name="signup-email" class="signup-input" value="<?php if (isset($_GET['signup-email'])){echo($_GET['signup-email']);}?>" placeholder="E-mail">
-                            <input type="password" name="signup-password" class="signup-input" placeholder="Password"><br>
-                            <input type="password" name="signup-password-repeat" class="signup-input" placeholder="Repeat Password"><br>
+                        <form id="signup-form" action="<?php echo URL; ?>Includes/signup.inc.php" method="post">
+                            <input type="text" id="signup-username" name="signup-username" class="signup-input" value="<?php if (isset($_GET['signup-username'])){echo($_GET['signup-username']);}?>" placeholder="Username"><br>
+                            <input type="text" id="signup-email" name="signup-email" class="signup-input" value="<?php if (isset($_GET['signup-email'])){echo($_GET['signup-email']);}?>" placeholder="E-mail">
+                            <input type="password" id="signup-password" name="signup-password" class="signup-input" placeholder="Password"><br>
+                            <input type="password" id="signup-password-repeat" name="signup-password-repeat" class="signup-input" placeholder="Repeat Password"><br>
                             <button type="submit"  name="signup-submit" class="signup-button">SIGN UP</button>
                         </form>
                     </div>
@@ -72,24 +75,6 @@
             </div>
         </div>
 
-    <script>
-        $(document).ready(function() {
-            $(".signup-form").hide();
-            $(".signup-tab").css("color", "rgba(255, 255, 255, 0.5)");
-
-            $(".login-tab").click(function() {
-                $(".signup-form").slideUp();
-                $(".login-form").slideDown();
-                $(".signup-tab").css("color", "rgba(255, 255, 255, 0.5)");
-                $(".login-tab").css("color", "rgba(255, 255, 255, 1)");
-            });
-
-            $(".signup-tab").click(function() {
-                $(".login-form").slideUp();
-                $(".signup-form").slideDown();
-                $(".login-tab").css("color", "rgba(255, 255, 255, 0.5)");
-                $(".signup-tab").css("color", "rgba(255, 255, 255, 1)");
-            });
-        });
-    </script>
+    <script src="<?php echo URL; ?>Public/js/loginFormHideShow.js"></script>
+    <script src="<?php echo URL; ?>Public/js/loginFormValidate.js"></script>
 </body>

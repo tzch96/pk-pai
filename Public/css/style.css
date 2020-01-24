@@ -702,3 +702,8 @@ td {
 label, .dataTables_info, .paginate_button {
     color: #fff !important;
 }
+
+.error-message p {
+    text-align: center;
+    padding-bottom: 0.5em;
+}
