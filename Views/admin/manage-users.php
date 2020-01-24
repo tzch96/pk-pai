@@ -68,6 +68,17 @@
         </table>
 
         <h4><?php echo $this->msg; ?></h4>
+
+        <h4>Add user</h4>
+        <div style="width: 25%;">
+            <form action="<?php echo URL; ?>admin/addUser" method="post">
+                <input class="signup-input" type="text" name="username" placeholder="Username"></input>
+                <input class="signup-input" type="email" name="email" placeholder="Email"></input>
+                <input class="signup-input" type="password" name="password" placeholder="Password"></input>
+                <input class="signup-input" type="text" name="role" placeholder="Role (user / admin)"></input>
+                <button class="signup-button" type="signup" type="submit">Add</button>
+            </form>
+        </div>
     </div>
     
     <div id="bottomnav" class="bottomnav">

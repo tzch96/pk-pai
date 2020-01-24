@@ -37,10 +37,7 @@
     <div class="content">
         <?php
             $idUser = $_SESSION['userId'];
-            $sql = "SELECT courses.id_course, courses.course_name FROM courses
-                LEFT JOIN users_courses ON users_courses.id_course=courses.id_course
-                LEFT JOIN users ON users_courses.id_user=users.id_user
-                WHERE users_courses.id_user=$idUser";
+            $sql = "SELECT * FROM user_courses WHERE id_user=$idUser";
             
             $result = $conn->query($sql);
         ?>

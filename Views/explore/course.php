@@ -35,7 +35,7 @@
 
     <div class="content">
         <?php
-            $sql = "SELECT courses.id_course, categories.category_name, courses.course_name, courses.description FROM courses INNER JOIN categories ON categories.id_category=courses.id_category WHERE courses.id_course=$this->idCourse";
+            $sql = "SELECT * FROM courses_with_categories WHERE id_course=$this->idCourse";
             $result = $conn->query($sql);
             $rows = mysqli_fetch_assoc($result);
         ?>

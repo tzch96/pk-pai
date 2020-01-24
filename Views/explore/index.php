@@ -37,7 +37,7 @@
         <h2 style="padding-bottom: 0.5em;"><?php echo $this->msg; ?></h3>
 
         <?php
-            $sql = "SELECT courses.id_course, categories.category_name, courses.course_name, courses.description FROM courses INNER JOIN categories ON categories.id_category=courses.id_category";
+            $sql = "SELECT * FROM courses_with_categories";
             $result = $conn->query($sql);
         ?>
 

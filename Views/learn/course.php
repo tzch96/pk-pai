@@ -37,10 +37,7 @@
     <div class="content">
         <?php
             $idUser = $_SESSION['userId'];
-            $sql = "SELECT courses.id_course, courses.course_name FROM courses
-                LEFT JOIN users_courses ON users_courses.id_course=courses.id_course
-                LEFT JOIN users ON users_courses.id_user=users.id_user
-                WHERE users_courses.id_user=$idUser";
+            $sql = "SELECT * FROM user_courses WHERE id_user=$idUser";
             
             $result = $conn->query($sql);
         ?>
@@ -68,9 +65,7 @@
         <h1 style="padding-top: 1em;">Current course: <?php echo $courseName; ?><span style="float: right;"></span></h1>
 
         <?php
-            $sql = "SELECT lessons.lesson_name, lessons.id_lesson FROM lessons
-                        LEFT JOIN courses ON courses.id_course=lessons.id_course
-                        WHERE lessons.id_course=$idCourse";
+            $sql = "SELECT * FROM course_lessons WHERE id_course=$idCourse";
 
             $result = $conn->query($sql);
         ?>

@@ -25,9 +25,8 @@
     <div class="content">
         <?php
             $idCourse = $_SESSION['currentCourseId'];
-            $sql = "SELECT lessons.id_lesson, lessons.lesson_name, lessons.theory FROM lessons
-                JOIN courses ON lessons.id_course=courses.id_course
-                WHERE lessons.id_course=$idCourse";
+            $sql = "SELECT * FROM course_lessons
+                WHERE id_course=$idCourse";
             
             $result = $conn->query($sql);
         ?>
